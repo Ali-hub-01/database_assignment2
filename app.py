@@ -432,7 +432,7 @@ def main():
         search = st.text_input(f"Search by {ord}", placeholder=f"{ord}")
         wh = ""
         if search:
-            wh = f" where {ord} = '{search}'"
+            wh = f" where Lower({ord}) = '{search}'"
         read(choice2, wh, ord, ord2)
 
     elif choice1 == "Create":
