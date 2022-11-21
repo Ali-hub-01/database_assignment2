@@ -347,7 +347,7 @@ def specUpdate(choice2):
     st.table(select_result)
     if select_result:
         email = st.text_input("Email", max_chars=60,value=[i[0] for i in find_2(choice2,"email","did",select_data1,"email",select_data2)][0])
-        id = st.number_input("ID", step=1, value=[i[0] for i in find_2(choice2,"ID","did",select_data1,"email",select_data2)][0])
+        id = st.number_input("ID", step=1, value=[i[0] for i in find_2(choice2,"did","did",select_data1,"email",select_data2)][0])
     if st.button("Update"):
         q = sa.text(
             f"update {choice2} set email='{email}', did ={id} where cname ={select_data1} and disease_code={select_data2}")
